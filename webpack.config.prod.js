@@ -1,5 +1,6 @@
 const path = require("path");
 const CleanPlugin = require("clean-webpack-plugin");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
   mode: "production",
@@ -16,6 +17,10 @@ module.exports = {
         use: "ts-loader",
         exclude: /node_modules/,
       },
+      {
+        test: /\.css$/,
+        use: ["style-loader", "css-loader"],
+      },
     ],
   },
 
@@ -23,5 +28,12 @@ module.exports = {
     extensions: [".ts", ".js"],
   },
 
-  plugins: [new CleanPlugin.CleanWebpackPlugin()],
+  plugins: [
+    new CleanPlugin.CleanWebpackPlugin(),
+    new HtmlWebpackPlugin({
+      title: "Webpack App",
+      filename: "index.html",
+      template: "index.html",
+    }),
+  ],
 };
