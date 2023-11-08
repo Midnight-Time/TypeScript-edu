@@ -4,11 +4,17 @@
 
 html {
   font-family: sans-serif;
+  font-size: 62.5%;
 }
 
 body {
   margin: 0;
   padding: 0;
+}
+
+.page-container {
+  max-width: 50rem;
+  margin: 5rem auto;
 }
 
 label,
@@ -45,6 +51,7 @@ button {
   cursor: pointer;
   color: white;
   padding: 0.75rem 1rem;
+  transition: all 0.3s;
 }
 
 button:focus {
@@ -56,12 +63,6 @@ button:active {
   background: #a80041;
   border-color: #a80041;
 }
-/* 
-.button::after {
-  content: "" attr(value);
-  padding: 0.75rem 1rem;
-  font-size: 3rem;
-} */
 
 .projects {
   margin: 1rem;
@@ -130,7 +131,27 @@ button:active {
 
 #user-input {
   margin: 1rem;
+  margin-bottom: 2rem;
   padding: 1rem;
   border: 1px solid #ff0062;
   background: #f7f7f7;
+}
+
+.link {
+  display: inline-block;
+  margin: 2rem 1rem;
+  padding-bottom: 3px;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+.link:link,
+.link:visited {
+  color: #0044ff;
+  border-bottom: 1px solid #0044ff;
+}
+
+.link:hover,
+.link:active {
+  color: #ff0062;
+  border-bottom: 1px solid #ff0062;
 }
